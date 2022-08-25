@@ -10,7 +10,7 @@ Contient :
 - Annuaire OpenLdap
 - Gestionnaire d'annuaire PhpLdapAdmin
 
-En ajoutant la configuration du serveur SMTP, il est possible de bénéficier de la fonctionnalité de création des utisateurs.
+En ajoutant la configuration du serveur SMTP, il est possible de bénéficier de la fonctionnalité de création des utilisateurs.
 
 ## Installation
 
@@ -45,7 +45,7 @@ docker compose up
 - Naviguer vers `localhost:5000`
 - S'identifier avec l'identifiant `cn=admin,dc=my-appli,dc=com` et le mot de passe `myAppliAdminPassword!`
 
-## Connection au portail
+## Connexion au portail
 
 ### Utilisateur de l'application
 
