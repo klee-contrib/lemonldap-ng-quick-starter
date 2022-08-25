@@ -11,7 +11,7 @@ Permet l'authentification des utilisateurs, puis la transmission dans le header 
 Ajouter au fichier hosts de windows, en mode administrateur C:\Windows\System32\drivers\etc\hosts la ligne
 
 ```config
-127.0.0.1 auth.my-appli.com manager.my-appli.local portal.my-appli.local app.my-appli.local
+127.0.0.1 auth.my-appli.local manager.my-appli.local portal.my-appli.local app.my-appli.local
 ```
 
 ### Configurer l'URL de l'application
@@ -53,4 +53,4 @@ Lancez la commande :
 
 ### Administrateur de LLNG
 
-Il est possible de se connecter au manager (`manager.local`) de `LemonLdap:NG` avec l'utilisateur `admin_llng` mot de passe `admin`.
+Il est possible de se connecter au manager (`http://manager.my-appli.local`) de `LemonLdap:NG` avec l'utilisateur `admin_llng` mot de passe `admin`.
