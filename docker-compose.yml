@@ -1,0 +1,36 @@
+services:
+  auth:
+    image: coudot/lemonldap-ng
+    ports:
+      - "80:80"
+      - "9000:9000"
+    environment:
+      - SSODOMAIN=my-appli.local
+      - PORTAL_HOSTNAME=portal.my-appli.local
+      - MANAGER_HOSTNAME=manager.my-appli.local
+      - HANDLER_HOSTNAME=handler.my-appli.local
+      - LOGLEVEL=debug
+      - FASTCGI_LISTEN_PORT=9000
+    volumes:
+      - ./auth/nginx.conf:/etc/nginx/sites-enabled/my-appli-nginx.conf
+      - ./auth/lmConf.json:/var/lib/lemonldap-ng/conf/lmConf-1.json
+  openldap:
+    image: osixia/openldap:1.5.0
+    environment:
+        - LDAP_ORGANISATION=my-appli
+        - LDAP_DOMAIN=my-appli.local
+        - LDAP_BASE_DN=dc=my-appli,dc=local
+        - LDAP_ADMIN_PASSWORD=myAppliAdminPassword!
+    ports:
+        - 389:389
+        - 636:636
+    volumes:
+      - ./auth/init.ldif:/container/service/slapd/assets/config/bootstrap/ldif/custom/50-bootstrap.ldif
+    command: --copy-service
+  phpldapadmin:
+    image: osixia/phpldapadmin
+    environment:
+      PHPLDAPADMIN_LDAP_HOSTS: openldap
+      PHPLDAPADMIN_HTTPS: 'false'
+    ports:
+      - 5000:80

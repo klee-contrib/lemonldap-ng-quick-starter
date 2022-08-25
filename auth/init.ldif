@@ -1,0 +1,34 @@
+#######################################
+### Groupe des utilisateurs de my-appli ##
+#######################################
+dn: cn=my-appli,{{ LDAP_BASE_DN }}
+cn: my-appli
+gidNumber: 600
+objectClass: posixGroup
+objectClass: top
+
+##########################
+### Admin LemonLDAP::NG ##
+##########################
+dn: uid=admin_llgn,cn=my-appli,{{ LDAP_BASE_DN }}
+uid: admin_llgn
+givenName: Admin llgn
+sn: Admin llgn
+cn: Admin llgn
+userPassword: {SSHA}5p1DNzN4Fz35QKe2oZqJHzZtZT+/MpWR
+objectClass: inetOrgPerson
+objectClass: top
+
+####################################
+### Utilisateurs de l'application ##
+####################################
+# Alexis Granet
+dn: uid=agranet,cn=my-appli,{{ LDAP_BASE_DN }}
+uid: agranet
+givenName: Alexis Granet
+sn: Alexis Granet
+cn: Alexis Granet
+mail: alexis.granet@mail.com
+userPassword: {SSHA}BG0if3XQIfY6LOc4+WADOwg/E+nXJDQ9
+objectClass: inetOrgPerson
+objectClass: top
