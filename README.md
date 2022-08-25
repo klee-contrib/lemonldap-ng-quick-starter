@@ -19,7 +19,7 @@ En ajoutant la configuration du serveur SMTP, il est possible de bénéficier de
 Ajouter au fichier hosts de windows, en mode administrateur C:\Windows\System32\drivers\etc\hosts la ligne
 
 ```config
-127.0.0.1 manager.my-appli.com portal.my-appli.com app.my-appli.com
+127.0.0.1 manager.my-appli.com auth.my-appli.com app.my-appli.com
 ```
 
 ### Configurer l'URL de l'application
