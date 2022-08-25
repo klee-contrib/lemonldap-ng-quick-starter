@@ -22,7 +22,7 @@
                "display" : "auto",
                "logo" : "configure.png",
                "name" : "WebSSO Manager",
-               "uri" : "http://manager.my-appli.local/manager.html"
+               "uri" : "http://manager.my-appli.com/manager.html"
             },
             "order" : 2,
             "type" : "application"
@@ -33,7 +33,7 @@
                "display" : "auto",
                "logo" : "database.png",
                "name" : "Notifications explorer",
-               "uri" : "http://manager.my-appli.local/notifications.html"
+               "uri" : "http://manager.my-appli.com/notifications.html"
             },
             "order" : 3,
             "type" : "application"
@@ -45,7 +45,7 @@
                "display" : "auto",
                "logo" : "database.png",
                "name" : "Sessions explorer",
-               "uri" : "http://manager.my-appli.local/sessions.html"
+               "uri" : "http://manager.my-appli.com/sessions.html"
             },
             "order" : 4,
             "type" : "application"
@@ -57,12 +57,12 @@
          "order" : 5,
          "site" : {
             "options" : {
-               "description" : "New app description",
+               "description" : "My app description",
                "display" : "auto",
                "logo" : "network.png",
                "name" : "my-appli",
                "tooltip" : "my-appli tool tip",
-               "uri" : "http://app.my-appli.local/"
+               "uri" : "http://app.my-appli.com/"
             },
             "order" : 6,
             "type" : "application"
@@ -74,8 +74,6 @@
    "authChoiceParam" : "lmAuth",
    "authentication" : "LDAP",
    "autoSigninRules" : {},
-   "available2F" : "UTOTP,TOTP,U2F,REST,Mail2F,Ext2F,WebAuthn,Yubikey,Radius",
-   "available2FSelfRegistration" : "TOTP,U2F,WebAuthn,Yubikey",
    "bruteForceProtection" : 0,
    "bruteForceProtectionIncrementalTempo" : 0,
    "bruteForceProtectionLockTimes" : "15, 30, 60, 300, 600",
@@ -87,29 +85,25 @@
    "captcha_register_enabled" : 1,
    "captcha_size" : 6,
    "casAccessControlPolicy" : "none",
-   "casAppMetaDataExportedVars" : {},
-   "casAppMetaDataMacros" : null,
    "casAppMetaDataOptions" : {},
    "casAttributes" : {},
    "casAuthnLevel" : 1,
-   "casSrvMetaDataExportedVars" : {},
    "casSrvMetaDataOptions" : {},
    "casStorageOptions" : {},
    "casTicketExpiration" : 0,
    "certificateResetByMailCeaAttribute" : "description",
    "certificateResetByMailCertificateAttribute" : "userCertificate;binary",
-   "certificateResetByMailURL" : "http://auth.example.com/certificateReset",
+   "certificateResetByMailURL" : "http://auth.my-appli.com/certificateReset",
    "certificateResetByMailValidityDelay" : 0,
    "cfgAuthor" : "admin_llgn",
-   "cfgAuthorIP" : "172.23.0.1",
-   "cfgDate" : 1661256183,
+   "cfgAuthorIP" : "0.0.0.0",
+   "cfgDate" : 1661436330,
    "cfgLog" : "",
-   "cfgNum" : "2",
+   "cfgNum" : 2,
    "cfgVersion" : "2.0.14",
    "checkDevOpsCheckSessionAttributes" : 1,
    "checkDevOpsDisplayNormalizedHeaders" : 1,
    "checkDevOpsDownload" : 1,
-   "checkTime" : 600,
    "checkUserDisplayComputedSession" : 1,
    "checkUserDisplayEmptyHeaders" : 0,
    "checkUserDisplayEmptyValues" : 0,
@@ -125,7 +119,6 @@
    "combination" : "demo,dbi",
    "confirmFormMethod" : "post",
    "contextSwitchingIdRule" : 1,
-   "contextSwitchingPrefix" : "switching",
    "contextSwitchingRule" : 0,
    "contextSwitchingStopWithLogout" : 1,
    "cookieName" : "lemonldap",
@@ -147,6 +140,8 @@
    "cspStyle" : "'self'",
    "customAddParams" : {},
    "customPluginsParams" : {},
+   "dbiAuthnLevel" : 2,
+   "dbiExportedVars" : {},
    "decryptValueRule" : 0,
    "demoExportedVars" : {
       "cn" : "cn",
@@ -154,13 +149,12 @@
       "uid" : "uid"
    },
    "displaySessionId" : 1,
-   "domain" : "my-appli.local",
+   "domain" : "my-appli.com",
    "exportedHeaders" : {
-      "app.my-appli.local" : {
+      "app.my-appli.com" : {
          "Auth-Mail" : "$mail"
       },
-      "manager.my-appli.local" : {},
-      "portal.my-appli.local" : {}
+      "manager.my-appli.com" : {}
    },
    "exportedVars" : {
       "uti_courriel" : "uti_courriel"
@@ -193,8 +187,6 @@
    "groups" : {
       "ADM" : "$uid eq 'admin_llgn'"
    },
-   "handlerInternalCache" : 15,
-   "handlerServiceTokenTTL" : 30,
    "hiddenAttributes" : "_password _2fDevices",
    "hideOldPassword" : 0,
    "httpOnly" : 1,
@@ -202,7 +194,6 @@
    "impersonationHiddenAttributes" : "_2fDevices _loginHistory",
    "impersonationIdRule" : 1,
    "impersonationMergeSSOgroups" : 0,
-   "impersonationPrefix" : "real_",
    "impersonationRule" : 0,
    "impersonationSkipEmptyValues" : 1,
    "infoFormMethod" : "get",
@@ -224,7 +215,7 @@
    "krbRemoveDomain" : 1,
    "ldapAllowResetExpiredPassword" : 0,
    "ldapAuthnLevel" : 2,
-   "ldapBase" : "dc=my-appli,dc=local",
+   "ldapBase" : "dc=my-appli,dc=com",
    "ldapChangePasswordAsUser" : 0,
    "ldapExportedVars" : {
       "cn" : "cn",
@@ -267,20 +258,15 @@
       "namespace" : "lemonldap-ng-sessions"
    },
    "locationRules" : {
-      "app.my-appli.local" : {
+      "app.my-appli.com" : {
          "^/logout" : "logout_sso",
          "default" : "accept"
       },
-      "manager.my-appli.local" : {
+      "manager.my-appli.com" : {
          "(?#Configuration)^/(.*?\\.(fcgi|psgi)/)?(manager\\.html|confs|prx/|$)" : "inGroup(\"adm\")",
          "(?#Notifications)/(.*?\\.(fcgi|psgi)/)?notifications" : "inGroup(\"adm\")",
          "(?#Sessions)/(.*?\\.(fcgi|psgi)/)?sessions" : "inGroup(\"adm\")",
          "default" : "inGroup(\"adm\")"
-      },
-      "portal.my-appli.local" : {
-         "(?#checkUser)^/checkuser" : "inGroup(\"ins\")",
-         "(?#errors)^/lmerror/" : "accept",
-         "default" : "accept"
       }
    },
    "loginHistoryEnabled" : 1,
@@ -298,17 +284,10 @@
    "mailOnPasswordChange" : 0,
    "mailSessionKey" : "mail",
    "mailTimeout" : 0,
-   "mailUrl" : "http://portal.my-appli.local/resetpwd",
-   "managerDn" : "cn=admin,dc=my-appli,dc=local",
-   "managerPassword" : "adminPassword!",
-   "max2FDevices" : 10,
-   "max2FDevicesNameLength" : 20,
+   "mailUrl" : "http://auth.my-appli.com/resetpwd",
+   "managerDn" : "cn=admin,dc=my-appli,dc=com",
+   "managerPassword" : "myAppliAdminPassword!",
    "multiValuesSeparator" : "; ",
-   "mySessionAuthorizedRWKeys" : [
-      "_appsListOrder",
-      "_oidcConnectedRP",
-      "_oidcConsents"
-   ],
    "newLocationWarningLocationAttribute" : "ipAddr",
    "newLocationWarningLocationDisplayAttribute" : "",
    "newLocationWarningMaxValues" : "0",
@@ -322,20 +301,12 @@
       "dirName" : "/var/lib/lemonldap-ng/notifications"
    },
    "notificationWildcard" : "allusers",
-   "notificationsMaxRetrieve" : 3,
    "notifyDeleted" : 1,
    "nullAuthnLevel" : 0,
    "oidcAuthnLevel" : 1,
-   "oidcOPMetaDataExportedVars" : {},
    "oidcOPMetaDataJSON" : {},
-   "oidcOPMetaDataJWKS" : {},
-   "oidcOPMetaDataOptions" : {},
    "oidcRPCallbackGetParam" : "openidconnectcallback",
-   "oidcRPMetaDataExportedVars" : {},
-   "oidcRPMetaDataMacros" : null,
    "oidcRPMetaDataOptions" : {},
-   "oidcRPMetaDataOptionsExtraClaims" : null,
-   "oidcRPMetaDataScopeRules" : null,
    "oidcRPStateTimeout" : 600,
    "oidcServiceAccessTokenExpiration" : 3600,
    "oidcServiceAllowAuthorizationCodeFlow" : 1,
@@ -381,14 +352,13 @@
    "passwordPolicyMinUpper" : 1,
    "passwordPolicySpecialChar" : "__ALL__",
    "passwordResetAllowedRetries" : 3,
-   "persistentSessionAttributes" : "_loginHistory _2fDevices notification_",
    "persistentStorage" : "Apache::Session::File",
    "persistentStorageOptions" : {
       "Directory" : "/var/lib/lemonldap-ng/psessions",
       "LockDirectory" : "/var/lib/lemonldap-ng/psessions/lock"
    },
    "port" : -1,
-   "portal" : "http://portal.my-appli.local/",
+   "portal" : "http://auth.my-appli.com/",
    "portalAntiFrame" : 1,
    "portalCheckLogins" : 1,
    "portalDisplayAppslist" : 1,
@@ -413,9 +383,8 @@
    "portalSkinRules" : {},
    "portalUserAttr" : "_user",
    "post" : {
-      "app.my-appli.local" : {},
-      "manager.my-appli.local" : {},
-      "portal.my-appli.local" : {}
+      "app.my-appli.com" : {},
+      "manager.my-appli.com" : {}
    },
    "proxyAuthServiceChoiceParam" : "lmAuth",
    "proxyAuthnLevel" : 2,
@@ -426,15 +395,15 @@
    "redirectFormMethod" : "get",
    "registerDB" : "LDAP",
    "registerTimeout" : 0,
-   "registerUrl" : "http://portal.my-appli.local/register",
+   "registerUrl" : "http://auth.my-appli.com/register",
    "reloadTimeout" : 5,
    "reloadUrls" : {
-      "localhost" : "http://handler.my-appli.local/reload"
+      "localhost" : "http://handler.my-appli.com/reload"
    },
    "remoteGlobalStorage" : "Lemonldap::NG::Common::Apache::Session::SOAP",
    "remoteGlobalStorageOptions" : {
-      "ns" : "http://auth.example.com/Lemonldap/NG/Common/PSGI/SOAPService",
-      "proxy" : "http://auth.example.com/sessions"
+      "ns" : "http://auth.my-appli.com/Lemonldap/NG/Common/PSGI/SOAPService",
+      "proxy" : "http://auth.my-appli.com/sessions"
    },
    "requireToken" : 1,
    "rest2fActivation" : 0,
@@ -449,7 +418,6 @@
    "samlAuthnContextMapPasswordProtectedTransport" : 3,
    "samlAuthnContextMapTLSClient" : 5,
    "samlEntityID" : "#PORTAL#/saml/metadata",
-   "samlIDPMetaDataExportedAttributes" : null,
    "samlIDPMetaDataOptions" : {},
    "samlIDPMetaDataXML" : {},
    "samlIDPSSODescriptorArtifactResolutionServiceArtifact" : "1;0;urn:oasis:names:tc:SAML:2.0:bindings:SOAP;#PORTAL#/saml/artifact",
@@ -467,13 +435,11 @@
    "samlNameIDFormatMapX509" : "mail",
    "samlOrganizationDisplayName" : "Example",
    "samlOrganizationName" : "Example",
-   "samlOrganizationURL" : "http://www.example.com",
+   "samlOrganizationURL" : "http://www.my-appli.com",
    "samlOverrideIDPEntityID" : "",
    "samlRelayStateTimeout" : 600,
-   "samlSPMetaDataExportedAttributes" : null,
-   "samlSPMetaDataMacros" : null,
    "samlSPMetaDataOptions" : {},
-   "samlSPMetaDataXML" : null,
+   "samlSPMetaDataXML" : {},
    "samlSPSSODescriptorArtifactResolutionServiceArtifact" : "1;0;urn:oasis:names:tc:SAML:2.0:bindings:SOAP;#PORTAL#/saml/artifact",
    "samlSPSSODescriptorAssertionConsumerServiceHTTPArtifact" : "1;0;urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact;#PORTAL#/saml/proxySingleSignOnArtifact",
    "samlSPSSODescriptorAssertionConsumerServiceHTTPPost" : "0;1;urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST;#PORTAL#/saml/proxySingleSignOnPost",
@@ -486,7 +452,6 @@
    "samlStorageOptions" : {},
    "securedCookie" : 0,
    "sessionDataToRemember" : {},
-   "sfEngine" : "::2F::Engines::Default",
    "sfExtra" : {},
    "sfManagerRule" : 1,
    "sfRemovedMsgRule" : 0,
@@ -500,7 +465,6 @@
    "singleUserByIP" : 0,
    "slaveAuthnLevel" : 2,
    "slaveExportedVars" : {},
-   "soapProxyUrn" : "urn:Lemonldap/NG/Common/PSGI/SOAPService",
    "stayConnected" : 0,
    "stayConnectedCookieName" : "llngconnection",
    "stayConnectedTimeout" : 2592000,
@@ -526,8 +490,10 @@
    "userDB" : "LDAP",
    "userPivot" : "uti_login",
    "utotp2fActivation" : 0,
-   "vhostOptions" : {},
-   "viewerHiddenKeys" : "samlIDPMetaDataNodes, samlSPMetaDataNodes",
+   "vhostOptions" : {
+      "app.my-appli.com" : {},
+      "manager.my-appli.com" : {}
+   },
    "webIDAuthnLevel" : 1,
    "webIDExportedVars" : {},
    "webauthn2fActivation" : 0,

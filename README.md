@@ -11,12 +11,12 @@ Permet l'authentification des utilisateurs, puis la transmission dans le header 
 Ajouter au fichier hosts de windows, en mode administrateur C:\Windows\System32\drivers\etc\hosts la ligne
 
 ```config
-127.0.0.1 auth.my-appli.local manager.my-appli.local portal.my-appli.local app.my-appli.local
+127.0.0.1 manager.my-appli.com portal.my-appli.com app.my-appli.com
 ```
 
 ### Configurer l'URL de l'application
 
-Dans le fichier `auth/nginx.conf`, remplacer le commentaire `#URL_DE_MON_APPLI` par l'URL de votre application accessible depuis le conteneur.
+Par défaut, le nginx redirige l'utilisateur authentifié vers une page statique. Vous pouvez modifier ce comportement en modifiant le fichier `nginx.conf`, l24-25.
 
 ### Configurer le serveur SMTP (indispensable pour la création de compte)
 
@@ -35,7 +35,7 @@ docker compose up
 ## Administrer l'annuaire
 
 - Naviguer vers `localhost:5000`
-- S'identifier avec l'identifiant `cn=admin,dc=my-appli,dc=local` et le mot de passe `myAppliAdminPassword!`
+- S'identifier avec l'identifiant `cn=admin,dc=my-appli,dc=com` et le mot de passe `myAppliAdminPassword!`
 
 ## Connection au portail
 
@@ -53,4 +53,4 @@ Lancez la commande :
 
 ### Administrateur de LLNG
 
-Il est possible de se connecter au manager (`http://manager.my-appli.local`) de `LemonLdap:NG` avec l'utilisateur `admin_llng` mot de passe `admin`.
+Il est possible de se connecter au manager (`http://manager.my-appli.com`) de `LemonLdap:NG` avec l'utilisateur `admin_llng` mot de passe `admin`.
