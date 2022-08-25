@@ -4,6 +4,14 @@ Bouchon pour démarrer rapidement des développements avec LemonLdap::NG.
 
 Permet l'authentification des utilisateurs, puis la transmission dans le header (`Auth-mail`) du mail de l'utilisateur connecté à une appli fictive.
 
+Contient :
+
+- SSO LemonLdap:NG
+- Annuaire OpenLdap
+- Gestionnaire d'annuaire PhpLdapAdmin
+
+En ajoutant la configuration du serveur SMTP, il est possible de bénéficier de la fonctionnalité de création des utisateurs.
+
 ## Installation
 
 ### Redirection avec le fichier host
